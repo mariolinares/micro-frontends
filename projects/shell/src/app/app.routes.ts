@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 // Add this import:
@@ -8,15 +7,27 @@ import { loadRemoteModule } from '@angular-architects/native-federation';
 export const APP_ROUTES: Routes = [
   {
     path: '',
-    component: HomeComponent,
     pathMatch: 'full',
+    redirectTo: 'flights',
   },
 
   // Add this route:
   {
     path: 'flights',
-    loadComponent: () =>
-      loadRemoteModule('mfe1', './Component').then((m) => m.AppComponent),
+    loadChildren: () =>
+      loadRemoteModule('mfe1', './Module').then((m) => m.HomeModule),
+    /* children: [
+      {
+        path: 'demo',
+        loadComponent: () =>
+          loadRemoteModule('mfe1', './Demo').then((m) => m.DemoComponent),
+      },
+      {
+        path: 'demo2',
+        loadComponent: () =>
+          loadRemoteModule('mfe1', './Demo2').then((m) => m.Demo2Component),
+      },
+    ], */
   },
 
   {

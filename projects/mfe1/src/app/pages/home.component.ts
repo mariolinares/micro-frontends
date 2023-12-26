@@ -2,16 +2,15 @@ import { Component, OnInit, inject } from '@angular/core';
 import { AuthService } from '@demo/auth';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
 })
-export class AppComponent implements OnInit {
+export class HomeComponent implements OnInit {
   constructor() {}
 
   auth = inject(AuthService);
 
   ngOnInit(): void {
-    console.log('userName', this.auth.userName);
+    console.log('home', this.auth.userName);
   }
 }
