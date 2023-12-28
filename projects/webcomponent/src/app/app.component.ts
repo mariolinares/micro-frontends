@@ -1,13 +1,17 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AuthService } from '@demo/auth';
 
 @Component({
-  selector: 'module-federation-web-components-root',
+  selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet],
-  template: '<router-outlet></router-outlet>',
+  template: `
+    <my-toggle>Hola</my-toggle>
+    <vass-button [color]="'warn'"></vass-button>
+  `,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppComponent {
   auth = inject(AuthService);

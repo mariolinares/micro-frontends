@@ -12,6 +12,10 @@ import { ToggleComponent } from './app/toggle.component';
     providers: [provideRouter(WC_ROUTES)],
   });
 
+  /* const app = await bootstrapApplication(AppComponent, {
+    providers: [provideRouter(WC_ROUTES)],
+  }); */
+
   const toogleElement = createCustomElement(ToggleComponent, {
     injector: app.injector,
   });

@@ -1,10 +1,9 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
-import { ToggleComponent } from 'projects/webcomponent/src/app/toggle.component';
 
 @Component({
   standalone: true,
   selector: 'app-home',
-  imports: [ToggleComponent],
+  imports: [],
   templateUrl: './home.component.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
