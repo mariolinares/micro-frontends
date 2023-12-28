@@ -16,18 +16,15 @@ export const APP_ROUTES: Routes = [
     path: 'flights',
     loadChildren: () =>
       loadRemoteModule('mfe1', './Module').then((m) => m.HomeModule),
-    /* children: [
-      {
-        path: 'demo',
-        loadComponent: () =>
-          loadRemoteModule('mfe1', './Demo').then((m) => m.DemoComponent),
-      },
-      {
-        path: 'demo2',
-        loadComponent: () =>
-          loadRemoteModule('mfe1', './Demo2').then((m) => m.Demo2Component),
-      },
-    ], */
+  },
+  {
+    path: 'facturas',
+    loadChildren: () =>
+      loadRemoteModule('mfe2', './Module').then((m) => m.ProductModule),
+  },
+  {
+    path: 'webcomponent',
+    loadChildren: () => import('./home/home.routes').then((m) => m.HOME_ROUTES),
   },
 
   {
